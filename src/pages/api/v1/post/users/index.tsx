@@ -16,7 +16,7 @@ export default async function handler(
     })
 
     const {name, gender, age, accountId} = createUserSchema.parse(req.body)
-    const accounts = await prisma.user.create({
+    await prisma.user.create({
         data:{
             name,
             gender,

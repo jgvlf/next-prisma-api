@@ -14,7 +14,7 @@ export default async function handler(
     })
 
     const {email, nickname} = createAccountSchema.parse(req.body)
-    const accounts = await prisma.account.create({
+    await prisma.account.create({
         data:{
             email,
             nickname
